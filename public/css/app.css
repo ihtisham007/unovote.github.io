@@ -11673,12 +11673,3 @@ select {
     margin: 10px 0px;
     height: 40px;
 }
-
-.vote-div {
-    display: block;
-    max-width: 100% !important;
-    width: 400px;
-    border: 1px solid #e9e1e1;
-    padding: 20px;
-    border-radius: 10px;
-}

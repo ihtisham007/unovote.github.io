@@ -29,6 +29,7 @@
             <div class="panel-heading">
 
             </div>
+            <script async="true" src="https://preprod.pol.is/embed.js"></script>
             <div class="panel-body">
                 <form class="form-horizontal" style="display: flex;vertical-align:middle;justify-content:center;" method="POST" action="{{ route('saveip') }}">
                     {{ csrf_field() }}
@@ -88,20 +89,26 @@
                         <div class="vote-div" style="display: none;">
 
                             <div class="col-md-12">
+                                <iframe src="https://pol.is/2hackettat?parent_url=http%3A%2F%2Flocalhost%3A8000%2F&referrer=" width="100%" height="500" frameborder="0" scrolling="no">
+                                    <div class='polis' data-conversation_id='2hackettat'></div>
+                                    <script async="true" src="https://pol.is/embed.js"></script>
+                                </iframe>
+
+
                                 <!--p for lorem ipsum-->
 
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt
                                     interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc eget nunc.
                                 </p>
                             </div>
                             <div class="col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Vote') }}
+                                   
                                 </button>
+                            </div>-->
                             </div>
                         </div>
-                    </div>
-                    <!---button for submit-->
+                        <!---button for submit-->
                 </form>
 
             </div>
@@ -110,6 +117,8 @@
     </div>
 </div>
 </div>
+
+
 <script>
     let count = 0;
     document.querySelector('.vote-div').style.display = 'none';
@@ -121,6 +130,7 @@
             if (count == 3) {
                 document.querySelector('.form-div').style.display = "none";
                 document.querySelector('.vote-div').style.display = "block";
+                document.querySelector("form").removeAttribute("style");
 
             }
         })
