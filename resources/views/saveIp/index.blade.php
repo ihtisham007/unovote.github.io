@@ -89,15 +89,12 @@
                         <div class="vote-div" style="display: none;">
 
                             <div class="col-md-12">
-                                <iframe src="https://pol.is/2hackettat?parent_url=http%3A%2F%2Flocalhost%3A8000%2F&referrer=" width="100%" height="500" frameborder="0" scrolling="no">
-                                    <div class='polis' data-conversation_id='2hackettat'></div>
-                                    <script async="true" src="https://pol.is/embed.js"></script>
-                                </iframe>
+                                <div class='polis' data-conversation_id='2hackettat'></div>
+                                <script async="true" src="https://pol.is/embed.js"></script>
+                            </div>
+                            <!--p for lorem ipsum-->
 
-
-                                <!--p for lorem ipsum-->
-
-                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt
+                            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi vel tincidunt
                                     interdum, nisl nunc egestas nisi, euismod aliquam nisl nunc eget nunc.
                                 </p>
                             </div>
@@ -106,9 +103,9 @@
                                    
                                 </button>
                             </div>-->
-                            </div>
                         </div>
-                        <!---button for submit-->
+                    </div>
+                    <!---button for submit-->
                 </form>
 
             </div>
@@ -121,11 +118,18 @@
 
 <script>
     let count = 0;
+    let getans = {
+        'gender': 0,
+        'age': 0,
+        'location': 0
+    };
     document.querySelector('.vote-div').style.display = 'none';
     document.querySelectorAll('select').forEach(function(index, key) {
         index.addEventListener("change", function() {
-            if (this.value != "0")
+            if (getans[index.name] == 0) {
+                getans[index.name] = index.value;
                 count += 1;
+            }
 
             if (count == 3) {
                 document.querySelector('.form-div').style.display = "none";
